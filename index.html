@@ -50,9 +50,10 @@ button.p{color:var(--blue)}button.m{color:var(--red)}
   <div id="app"></div>
 </main>
 <script>
-// ✏️ CHANGE THESE THREE to match your GitHub repo
-const OWNER = "YOUR-GITHUB-USERNAME";
-const REPO  = "YOUR-REPO-NAME";
+// Auto-detects your username and repo name from the website link
+const OWNER = "tanaghoj-blip";
+const seg = location.pathname.split("/")[1];
+const REPO = (seg && !seg.endsWith(".html")) ? seg : OWNER + ".github.io";
 const BRANCH = "main";
 
 const API = `https://api.github.com/repos/${OWNER}/${REPO}/contents/points.json`;
